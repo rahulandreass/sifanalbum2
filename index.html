@@ -1,0 +1,499 @@
+
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Sifan Story❤️</title>
+
+<style>
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Georgia, serif;
+    min-height: 100vh;
+    background:
+    radial-gradient(circle at top, #673c72, transparent 60%),
+    linear-gradient(135deg, #1b102b, #542b50, #a04d70);
+
+    color: white;
+    text-align: center;
+    overflow-x: hidden;
+}
+
+/* BACKGROUND */
+
+.background {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: -1;
+}
+
+.heart {
+    position: absolute;
+    bottom: -30px;
+    animation: float 8s linear infinite;
+    opacity: 0.7;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0) rotate(0);
+        opacity: 0;
+    }
+
+    20% {
+        opacity: 0.8;
+    }
+
+    100% {
+        transform: translateY(-110vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* HALAMAN DEPAN */
+
+.container {
+    padding: 60px 15px;
+}
+
+h1 {
+    font-size: 35px;
+    margin-bottom: 15px;
+}
+
+.subtitle {
+    color: #ffd9e8;
+    margin-bottom: 35px;
+    line-height: 1.7;
+}
+
+/* KOTAK SURAT */
+
+.mailbox {
+    width: 290px;
+    margin: auto;
+    padding: 30px 20px;
+    background: rgba(255,255,255,0.12);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255,255,255,0.3);
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+}
+
+.envelope {
+    font-size: 100px;
+    margin: 20px;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+button {
+    background: #e88ba9;
+    color: white;
+    border: none;
+    padding: 13px 25px;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 15px;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #ffb2cb;
+    transform: scale(1.05);
+}
+
+/* ISI SURAT */
+
+.content {
+    display: none;
+    max-width: 850px;
+    margin: 40px auto;
+    animation: appear 1.2s ease;
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.letter {
+    background: rgba(255,255,255,0.13);
+    backdrop-filter: blur(15px);
+    padding: 30px;
+    border-radius: 20px;
+    margin: 25px 10px;
+    line-height: 1.9;
+    border: 1px solid rgba(255,255,255,0.2);
+}
+
+.letter h2 {
+    margin-bottom: 20px;
+    color: #ffc4d8;
+}
+
+/* GALERI FOTO */
+
+.gallery {
+    margin: 40px auto;
+    padding: 15px;
+}
+
+.photo-frame {
+    display: inline-block;
+    width: 270px;
+    padding: 12px 12px 35px;
+    margin: 15px;
+    background: #fff7f2;
+    border-radius: 5px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+    cursor: pointer;
+    transition: 0.5s;
+    transform: rotate(-2deg);
+}
+
+.photo-frame:hover {
+    transform: rotate(0deg) scale(1.04);
+}
+
+.photo-frame img {
+    width: 100%;
+    height: 320px;
+    object-fit: cover;
+    display: block;
+}
+
+.photo-caption {
+    color: #8a4662;
+    font-size: 16px;
+    margin-top: 15px;
+}
+
+/* FOTO BERIKUTNYA */
+
+.next-photo {
+    margin-top: 15px;
+}
+
+.counter {
+    margin: 15px;
+    color: #ffd9e8;
+}
+
+/* MUSIK */
+
+.music-player {
+    margin: 30px;
+}
+
+/* FOOTER */
+
+footer {
+    margin-top: 50px;
+    padding: 30px;
+    color: #ffd9e8;
+}
+
+@media(max-width:600px) {
+
+    h1 {
+        font-size: 27px;
+    }
+
+    .photo-frame {
+        width: 85%;
+    }
+
+    .photo-frame img {
+        height: 350px;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="background" id="background"></div>
+
+<div class="container">
+
+    <h1>♡ Sifan's Little Universe ♡</h1>
+
+    <p class="subtitle">
+        Cerita tentang Dena (Manusia dengan kerandoman ajaib)
+    </p>
+
+    <!-- KOTAK SURAT -->
+
+    <div class="mailbox" id="mailbox">
+
+        <div class="envelope">💌</div>
+
+        <h2>Surat Buat Kamu</h2>
+
+        <p style="margin:15px">
+            Ini Surat Random Buat kamu wkwkkw
+        </p>
+
+        <button onclick="openLetter()">
+            klik di sini eee 💗
+        </button>
+
+    </div>
+
+    <!-- ISI KOTAK SURAT -->
+
+    <div class="content" id="content">
+
+        <div class="letter">
+
+            <h2>Buat Sifan Manusia 1000 Kerandoman ❤️</h2>
+
+            <p>
+                Untuk seseorang yang begitu istimewa...
+                <br><br>
+
+                Aku mungkin tidak selalu bisa memberikan
+                hal-hal yang sempurna, tetapi aku ingin
+                setiap kenangan sederhana bersama kita
+                menjadi sesuatu yang berharga, Asekkkkkkkk
+                <br><br>
+
+                Terima kasih telah menjadi bagian
+                dari Kerandoman Dunia Wandaka.
+                <br><br>
+
+                Semoga kita selalu punya alasan
+                untuk Mencuri Mangga, Tidak menyalahkan saat te awa ,
+                dan menciptakan banyak Mangga Curian Yang Bervariasi.
+                <br><br>
+
+                You are one of my favorite chapters
+                in this Random Moment. Hehhehehehhehe
+                <br><br>
+
+                <b>Dengan Mangga kita Ceria HAHHAHAHHA 💗</b>
+            </p>
+
+        </div>
+
+        <!-- GALERI -->
+
+        <h2>♡ Foto sebelum Tragedi ♡</h2>
+
+        <p style="margin:15px">
+            klik lagi di sini.
+        </p>
+
+        <div class="gallery">
+
+            <div class="photo-frame"
+                 onclick="nextPhoto()">
+
+                <img id="photo"
+                     src="8.jpeg"
+                     alt="Random Picts">
+
+               
+
+                <div class="photo-caption"
+                     id="caption">
+                    Kerandoman Ajaib ♡
+                </div>
+
+            </div>
+
+            <p class="counter" id="counter">
+                1 / 5
+            </p>
+
+            <button class="next-photo"
+                    onclick="nextPhoto()">
+                Next Memory →
+            </button>
+
+        </div>
+
+        <div class="music-player">
+
+            <p>🎵 Our Special Song</p>
+
+            <button onclick="toggleMusic()" id="musicButton">
+                ⏸ Pause Music
+            </button>
+
+        </div>
+
+    </div>
+
+    <footer>
+        Made with love, just for you. ♡
+    </footer>
+
+</div>
+
+<audio id="music" loop>
+    <source src="bola mata sayu.mpeg" type="audio/mpeg">
+</audio>
+
+<script>
+
+/* DAFTAR FOTO */
+
+const photos = [
+    "8.jpeg",
+    "9.jpeg",
+    "13.jpeg",
+    "19.jpeg",
+    "20.jpeg"
+];
+
+const captions = [
+    "Our First Memory ♡",
+    "Sweet Moments 💗",
+    "Beautiful Together",
+    "My Favorite Person",
+    "Forever in My Heart ❤️"
+];
+
+let currentPhoto = 0;
+
+/* BUKA KOTAK SURAT */
+
+function openLetter() {
+
+    const mailbox = document.getElementById("mailbox");
+    const content = document.getElementById("content");
+    const music = document.getElementById("music");
+
+    mailbox.style.display = "none";
+
+    content.style.display = "block";
+
+    music.play().then(() => {
+        document.getElementById("musicButton")
+        .innerHTML = "⏸ Pause Music";
+    }).catch(() => {
+        document.getElementById("musicButton")
+        .innerHTML = "▶ Play Music";
+    });
+
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+
+}
+
+/* PINDAH FOTO */
+
+function nextPhoto() {
+
+    currentPhoto++;
+
+    if (currentPhoto >= photos.length) {
+        currentPhoto = 0;
+    }
+
+    const photo = document.getElementById("photo");
+
+    photo.style.opacity = "0";
+
+    setTimeout(() => {
+
+        photo.src = photos[currentPhoto];
+
+        photo.onload = () => {
+            photo.style.opacity = "1";
+        };
+
+        document.getElementById("caption")
+        .innerHTML = captions[currentPhoto];
+
+        document.getElementById("counter")
+        .innerHTML =
+        (currentPhoto + 1) + " / " + photos.length;
+
+    }, 250);
+
+}
+
+/* KONTROL MUSIK */
+
+function toggleMusic() {
+
+    const music = document.getElementById("music");
+    const button = document.getElementById("musicButton");
+
+    if (music.paused) {
+
+        music.play();
+        button.innerHTML = "⏸ Pause Music";
+
+    } else {
+
+        music.pause();
+        button.innerHTML = "▶ Play Music";
+
+    }
+
+}
+
+/* ANIMASI HATI */
+
+function createHeart() {
+
+    const heart = document.createElement("div");
+
+    heart.className = "heart";
+    heart.innerHTML = "♥";
+
+    heart.style.left = Math.random() * 100 + "%";
+
+    heart.style.fontSize =
+    (15 + Math.random() * 25) + "px";
+
+    heart.style.animationDuration =
+    (5 + Math.random() * 6) + "s";
+
+    document.getElementById("background")
+    .appendChild(heart);
+
+    setTimeout(() => {
+        heart.remove();
+    }, 10000);
+
+}
+
+setInterval(createHeart, 600);
+
+</script>
+
+</body>
+</html>
+```
